@@ -1,0 +1,228 @@
+﻿/*
+.jsui_Generic_TextSelector_blanket {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+*/
+.jsui_Generic_TextSelector {
+    position: relative;
+	height: 20px;
+}
+
+    .jsui_Generic_TextSelector .selectorContent {
+        padding: 0;
+        background-color: #E0E9F0;
+        /*box-shadow: 5px 5px 5px #606060;*/
+		max-height: 325px;
+		overflow-y: auto;
+    }
+	
+	/*
+	.jsui_Generic_TextSelector .selectorContent .result {
+		overflow-y: hidden;
+	}
+	*/
+
+    .jsui_Generic_TextSelector .selector {
+        height: 20px;
+    }
+
+    .jsui_Generic_TextSelector .gray {
+        color: #606060;
+    }
+
+    .NokSelector {
+        font-style: italic;
+        color: #606060;
+    }
+
+    .jsui_Generic_TextSelector > input {
+        /*position: absolute;*/ /* permanent verwijderen??? */
+        z-index: 100;
+    }
+
+    .jsui_Generic_TextSelector > input:focus::-moz-placeholder {
+		color: #006;
+    }
+	
+	.jsui_Generic_TextSelector > input:focus::-webkit-input-placeholder {
+		color: #006;
+    }
+	
+	
+
+.search .jsui_Generic_TextSelector > input {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.jsui_Generic_TextSelector > div {
+    position: absolute;
+    z-index: 101;
+    background-color: white;
+    border: 1px solid #004682;
+    top: 20px;
+    white-space: nowrap;
+}
+
+    .jsui_Generic_TextSelector > div > .result {
+        padding: 3px;
+        min-width: 300px;
+        white-space: normal;
+        background-image: linear-gradient(0deg, #BED6F8, #ECF4FE 20%);
+		padding-top: 7px;
+		padding-bottom: 7px;
+		padding-left: 5px;
+		
+		/* font-family: monospace; */
+		color: #006;		
+    }
+
+    .jsui_Generic_TextSelector > div > .result .hl-val {
+		/* font-family: monospace; */
+		color: #006;
+		font-weight: bold;		
+	}
+
+        .jsui_Generic_TextSelector > div > .result.selected {
+            /* background-image: linear-gradient(0deg, #FFC739, #ECF4FE 80%); */
+            /* background-image: linear-gradient(0deg, #FFD453, #ECF4FE 80%); */
+			background-image: none;
+			background-color: #FFD453;
+        }
+
+        .jsui_Generic_TextSelector > div > .result:hover {
+            cursor: pointer;
+            /* background-image: linear-gradient(0deg, #FFC739, #ECF4FE 80%); */
+			/* background-image: linear-gradient(0deg, #FFD453, #ECF4FE 80%); */
+			background-image: none;
+			background-color: #FFD453;
+        }
+
+    .jsui_Generic_TextSelector > div > .selector.selected {
+        /*background-image: linear-gradient(0deg, #FFC739, white 80%);*/
+        background-color: #D6E1EB;
+    }
+
+    .jsui_Generic_TextSelector > div > .selector:hover {
+        cursor: pointer;
+        background-color: #D6E1EB;
+        /*background-image: linear-gradient(0deg, #FFC739, white 80%);*/
+    }
+
+    .jsui_Generic_TextSelector > div > .result > div {
+        float: left;
+        width: 32px;
+        height: 32px;
+        margin-right: 5px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 32px;
+    }
+
+    .jsui_Generic_TextSelector > div > .result em {
+        font-weight: bold;
+    }
+
+        .jsui_Generic_TextSelector > div > .result em.original {
+            color: red;
+        }
+
+    .jsui_Generic_TextSelector > div > .result span.small {
+        font-size: 80%;
+    }
+
+    .jsui_Generic_TextSelector > div .subtitle {
+        font-size: 80%;
+        color: gray;
+    }
+
+.jsui_Generic_TextSelector .selectorContentTop {
+    display: inline-block;
+    width:100%;
+    border-bottom: solid 1px #004682;
+    margin-bottom: 0.2em;
+}
+
+.jsui_Generic_TextSelector .selectorContentTop span {
+    margin-right: 0.5em;
+}
+
+.jsui_Generic_TextSelector .addOk,
+.jsui_Generic_TextSelector .addNOk,
+.jsui_Generic_TextSelector .added {
+    width: 15px;
+    display: inline-block;
+    margin-right: 0.2em;
+}
+
+.jsui_Generic_TextSelector .addOk {
+    /*background-image: url('../../img/jsui.Generic/LUID/icon_add.gif');*/
+}
+
+.jsui_Generic_TextSelector .addNOk {
+    /*background-image: url('../../img/jsui.Generic/LUID/icon_add_yellow.gif');*/
+    color: red;
+}
+
+.jsui_Generic_TextSelector .added {
+    /*background-image: url('../../img/jsui.Generic/LUID/ico/icovinkje.png');*/
+    /*color: green;*/
+}
+
+.jsui_Generic_TextSelector .hasSelections {
+    color: #004682;
+    cursor:pointer;
+}
+/*.jsui_Generic_TextSelector .hasSelections:hover {
+    color: #BE965A;
+    cursor:pointer;
+}*/
+
+.jsui_Generic_TextSelector .hasNone {
+    color: grey;
+}
+.jsui_Generic_TextSelector .hasNone:hover     {
+    color: grey;
+    cursor:default;
+}
+
+.jsui_Generic_TextSelector .active {
+    color: green;
+    cursor:pointer;
+}
+
+.jsui_Generic_TextSelector_Results {
+    width: 250px;
+}
+
+.jsui_Generic_TextSelector_Results .result {
+    /*height: 28px; */
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.jsui_Generic_TextSelector_Results .result .hl-val {
+	/*
+			font-family: monospace;
+		color: #006;
+	*/
+    font-weight: normal;	
+}
+
+.jsui_Generic_TextSelector_Results .result .closer {
+	position: relative;
+	top: 1px;
+    width: 12px;
+    display: inline-block;
+	margin-left: 5px;	
+	background-image: url('../../img/jsui.Generic/GUI/icon_remove_nonactive.png');
+}
+
+.jsui_Generic_TextSelector_Results .result .closer:hover {
+	background-image: url('../../img/jsui.Generic/GUI/icon_remove_active.png');
+}

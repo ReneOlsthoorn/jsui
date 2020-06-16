@@ -1,0 +1,14 @@
+﻿body {
+    color: #000000;
+    background: #ffffff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+    width: 670px;
+}
+
+a {
+    text-decoration: underline;
+    color: #0000ff;
+}

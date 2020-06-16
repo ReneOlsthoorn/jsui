@@ -1,0 +1,360 @@
+
+.matchedzoektekst {
+    background-color: #b6ff00;
+}
+
+.pListContainer .no_selection {
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.pListContainer div.toolbar {
+    height: 20px;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-left: 4px;
+    border: 1px solid #9CBAEF;
+    border-bottom: 0;
+    border-top: 0;
+    background-image: url(../../img/jsui.Generic/List/gray-bg.gif);
+}
+
+    .pListContainer div.toolbar span.iconLeft {
+        padding-left: 18px;
+        height: 15px;
+        padding-bottom: 1px;
+    }
+
+    .pListContainer div.toolbar span.toolbar_verwijderen {
+        background-image: url('../../img/jsui.Generic/GUI/ico/icoVuilnisbak.png');
+        background-repeat: no-repeat;
+    }
+
+        .pListContainer div.toolbar span.toolbar_verwijderen[disabled='disabled'] {
+            background-image: url('../../img/jsui.Generic/GUI/ico/icoVuilnisbakDisabled.png');
+        }
+
+    .pListContainer div.toolbar span.toolbar_aanpassen {
+        background-image: url('../../img/jsui.Generic/GUI/ico/icoPotlood.png');
+        background-repeat: no-repeat;
+    }
+
+        .pListContainer div.toolbar span.toolbar_aanpassen[disabled='disabled'] {
+            background-image: url('../../img/jsui.Generic/GUI/ico/icoPotloodDisabled.png');
+        }
+
+    .pListContainer div.toolbar span.toolbar_nieuw {
+        background-image: url('../../img/jsui.Generic/GUI/ico/icoNieuw.png');
+        background-repeat: no-repeat;
+    }
+
+    .pListContainer div.toolbar span.searchbar_zoek {
+        background-image: url('../../img/jsui.Generic/GUI/ico/icoZoek.png');
+        background-repeat: no-repeat;
+    }
+
+.pListContainer .toolbar_settings {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    min-width: 0;
+}
+
+    .pListContainer .toolbar_settings div {
+        height: 14px;
+        width: 14px;
+        background-image: url('../../img/jsui.Generic/GUI/ico/icoSettings.png');
+        background-position: center center;
+    }
+
+.pListContainer .genericlisttablediv {
+    overflow: auto;
+    border: 1px solid #9CBAEF;
+    border-bottom: 0;
+    border-top: 1px solid #ccc;
+    background-color: white;
+}
+
+    .pListContainer .genericlisttablediv > table {
+        border-collapse: collapse;
+        border: 0;
+    }
+
+    .pListContainer .genericlisttablediv tr {
+        height: 22px;
+    }
+
+    .pListContainer .genericlisttablediv th {
+        text-align: left;
+        border-bottom: 1px solid #d0d0d0;
+        border-right: 1px solid #d0d0d0;
+        vertical-align: middle;
+        background-image: url(../../img/jsui.Generic/List/grid3-hrow.gif);
+        font-weight: normal;
+        height: 23px;
+        padding-left: 3px;
+        width: auto;
+        padding-right: 3px;
+        /* border: 0; */
+    }
+
+        .pListContainer .genericlisttablediv th:hover {
+            background-image: url(../../img/jsui.Generic/List/grid3-hrow-over.gif);
+        }
+
+        .pListContainer .genericlisttablediv th div {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+    .pListContainer .genericlisttablediv td {
+        border-right: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        height: 17px;
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 3px;
+        width: auto;
+        padding-right: 3px;
+        /* border: 0; */
+    }
+
+        .pListContainer .genericlisttablediv td div {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .pListContainer .genericlisttablediv td.meer {
+            border: 0;
+            color: #bbb;
+        }
+
+    .pListContainer .genericlisttablediv tr.datarow {
+        border-top: 1px solid transparent;
+    }
+
+        .pListContainer .genericlisttablediv tr.datarow:hover {
+            border-color: #ddd;
+            background-color: #efefef;
+            background-image: url(../../img/jsui.Generic/List/row-over.gif);
+            border-top: 1px solid transparent;
+        }
+
+    .pListContainer .genericlisttablediv tr.selected {
+        background-image: url(../../img/jsui.Generic/List/row-sel.gif);
+    }
+
+        .pListContainer .genericlisttablediv tr.selected:hover {
+            background-image: url(../../img/jsui.Generic/List/row-sel.gif);
+        }
+
+    .pListContainer .genericlisttablediv .grips {
+        height: 0px;
+        position: relative;
+    }
+
+    .pListContainer .genericlisttablediv .grip {
+        margin-left: -5px;
+        position: absolute;
+        z-index: 5;
+    }
+
+        .pListContainer .genericlisttablediv .grip .resizer {
+            position: absolute;
+            background-color: red; /* NIET VERWIJDEREN. IE8 heeft blijkbaar een background-color nodig om opacity te kunnen doen voor columnresizer. */
+            filter: alpha(opacity=1);
+            opacity: 0;
+            width: 10px;
+            height: 100%;
+            cursor: e-resize;
+            top: 0px;
+            bottom: 0px;
+        }
+
+    .pListContainer .genericlisttablediv .LastGrip {
+        position: absolute;
+        width: 1px;
+    }
+
+.pListContainer div.pagingbar {
+    height: 26px;
+    background-image: url(../../img/jsui.Generic/List/bg.gif);
+    border: 1px solid #9CBAEF;
+}
+
+    .pListContainer div.pagingbar input[type=image] {
+        width: inherit;
+        border: 1px solid transparent;
+        vertical-align: middle;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+        .pListContainer div.pagingbar input[type=image]:hover {
+            border: 1px solid #b6c3d7;
+        }
+
+        .pListContainer div.pagingbar input[type=image][disabled=disabled]:hover {
+            border: 1px solid transparent;
+        }
+
+    .pListContainer div.pagingbar input {
+        text-align: right;
+        padding-top: 0px;
+        width: 30px;
+    }
+
+.pListContainer .loading {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.pListContainer.full {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+    .pListContainer.full div.toolbar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .pListContainer.full .genericlisttablediv {
+        position: absolute;
+        top: 29px; /* height+padding+border+margin of the toolbar */
+        right: 0;
+        left: 0;
+        bottom: 28px; /* height+padding+border+margin of the pagingbar */
+    }
+
+    .pListContainer.full div.pagingbar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+.pListContainer .settingsDiv {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 0;
+    bottom: 0px;
+}
+
+    .pListContainer .settingsDiv > div {
+        overflow: auto;
+        max-height: 210px;
+    }
+
+    .pListContainer .settingsDiv button {
+        padding: 2px;
+        height: 20px;
+        min-width: 30px;
+        width: auto;
+    }
+
+    .pListContainer .settingsDiv table {
+        width: 100%;
+        border: 1px solid #EFEFEF;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+    }
+
+    .pListContainer .settingsDiv tr s {
+        border: 1px solid #EFEFEF;
+    }
+
+    .pListContainer .settingsDiv tr.odd {
+        background-color: #C0C0C0;
+    }
+
+    .pListContainer .settingsDiv td {
+        border: 1px solid #EFEFEF;
+        padding: 2px;
+        line-height: 1.5em;
+    }
+
+/* Hieronder de styles nodig voor de rowEditor, deze staat altijd in popupPositioned */
+.popupPositioned .editDiv {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+
+    .popupPositioned .editDiv .bbar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+        .popupPositioned .editDiv .bbar button {
+            margin-left: 10px;
+        }
+
+    .popupPositioned .editDiv .editTableDiv {
+        max-height: 402px;
+        overflow: auto;
+    }
+
+    .popupPositioned .editDiv table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .popupPositioned .editDiv tr {
+        border: 1px solid #efefef;
+        vertical-align: middle;
+    }
+
+        .popupPositioned .editDiv tr:hover {
+            border: 1px solid #efefef;
+            background-image: url(../../img/jsui.Generic/List/row-over.gif);
+        }
+
+    .popupPositioned .editDiv td {
+        padding: 4px;
+        line-height: 20px;
+        text-align: left;
+        width: auto;
+        vertical-align: top;
+    }
+
+    .popupPositioned .editDiv th {
+        text-align: left;
+        border: 1px solid #d0d0d0;
+        vertical-align: middle;
+        background-image: url(../../img/jsui.Generic/List/grid3-hrow.gif);
+        font-weight: normal;
+        height: 23px;
+    }
+
+        .popupPositioned .editDiv th:hover {
+            background-image: url(../../img/jsui.Generic/List/grid3-hrow-over.gif);
+        }
+
+    .popupPositioned .editDiv .error {
+        border: 2px solid red;
+    }

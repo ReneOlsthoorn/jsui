@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-store" />
+	<base href="http://localhost:8092/webapp/">
+    <title>Webapp</title>
+
+    <!-- 1: De website icon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+    <!-- 2: De css bestanden -->
+    <link href="css/jquery.splitter.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/jsui.Generic/jsui.Generic.List.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/jsui.Generic/jsui.Generic.Panel.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/jsui.Generic/jsui.Generic.TabControl.css" media="screen" rel="stylesheet" type="text/css">
+	<link href="css/jsui.Generic/jsui.Generic.Tree.css" media="screen" rel="stylesheet" type="text/css">	
+    <link href="css/jsui.Generic/jsui.Generic.Window.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/jsui.Generic/jsui.Generic.TabControl.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/jsui.Generic/jsui.Generic.Selector.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="css/gui.css" media="screen" rel="stylesheet" type="text/css">
+
+    <!-- 3: De javascript bestanden van externe partijen -->
+    <script src="javascript/extern/prototypes.js" type="text/javascript"></script>
+    <script src="javascript/extern/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="javascript/extern/jquery.splitter-0.14.0.js" type="text/javascript"></script>
+
+    <!-- 4: De eigen herbruikbare javascript bestanden -->
+    <script src="javascript/jsui.Basics.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Util.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.Cookie.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.GenericSelector.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.List.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.ListColumnResize.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.ListPagingBar.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.ListSearchBar.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.ListSettingsDialog.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.ListToolBar.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.Panel.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.RowEditor.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.TabControl.js" type="text/javascript"></script>
+	<script src="javascript/jsui.Generic/jsui.Generic.Tree.js" type="text/javascript"></script>	
+    <script src="javascript/jsui.Generic/jsui.Generic.Window.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.Splitter.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Generic.Selector.js" type="text/javascript"></script>
+    <script src="javascript/jsui.Generic/jsui.Selector.js" type="text/javascript"></script>
+
+    <!-- 4: De eigen domein specifieke javascript bestanden -->
+    <!-- 5: De applicatie javascript bestanden -->
+
+</head>
+<body>
+<div id="messageDiv" style="z-index:999;"></div>
+<script type="text/javascript">
+	$(function() {
+        jsui.Webapp.singletonMain = new jsui.Webapp.Main(document.body);
+    });
+</script>
+</body>
+</html>

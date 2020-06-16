@@ -1,0 +1,319 @@
+
+* {
+    margin: 0;
+    padding: 0;	
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body, input, textarea, select, button, .inputfilelabel {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #000063;
+}
+
+input, textarea, select, button, a.button, .inputfilelabel {
+    border: 1px solid #87acce;
+    border-radius: 3px;
+    padding: 1px 2px;
+}
+
+    input[disabled], textarea[disabled], select[disabled], button[disabled], .inputfilelabel[disabled] {
+        color: #888;
+    }
+
+    input[type="radio"] {
+        vertical-align: middle;
+        border: 0;
+    }
+
+    input[type="checkbox"] {
+        vertical-align: top;
+        border: 0;
+    }
+	
+select {
+    padding-right: 0;
+}
+
+iframe {
+    border: 0;
+}
+
+button, input[type="submit"], input[type="button"], a.button, .inputfilelabel {
+    font-weight: bold;
+    height: 18px;
+    background-image: url('../img/jsui.Generic/GUI/agBtnTile.png');
+    background-position: left top;
+    padding: 0 3px;
+}
+
+    button.pressed, input.pressed[type="submit"], input.pressed[type="button"] {
+        background-image: url('../img/jsui.Generic/GUI/agBtnTileDown.png');
+    }
+
+    button:hover, input[type="submit"]:hover, input[type="button"]:hover, .inputfilelabel:hover {
+        background-position: left bottom;
+    }
+
+    button.right {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+h1 {
+    background-image: url('../img/jsui.Generic/GUI/h1.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding-left: 16px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+h2 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+a:visited {
+    color: #000063;
+}
+
+div.LoadingBox {
+    position: absolute;
+    border: 1px solid black;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-left: -110px;
+    margin-top: -30px;
+    padding: 5px;
+    padding-top: 50px;
+    background-color: #D8E0EB;
+    background-image: url('../img/jsui.Generic/GUI/loading.gif');
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    z-index: 999;
+}
+
+#message {
+    display: none;
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    background-color: #FFE77F;
+    padding: 2px;
+    text-align: center;
+}
+
+.ResultContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+    .ResultContainer.clean {
+        top: 20px;
+    }
+
+    .ResultContainer .buttonBar {
+        position: absolute;
+        top: -19px;
+        right: 0;
+    }
+
+        .ResultContainer .buttonBar button {
+            margin-left: 5px;
+        }
+
+.deleteButton:hover
+{
+    background-image: url(../img/jsui.Generic/GUI/icon_remove_active.png);
+}
+
+.deleteButton {
+    background-image: url(../img/jsui.Generic/GUI/icon_remove_nonactive.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-right: 12px;
+    padding-right: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#blanket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #777;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    z-index: 999001;
+}
+
+.popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #eeeeee;
+    z-index: 999002;
+    margin-left: -400px;
+    margin-top: -350px;
+    width: 800px;
+    height: 700px;
+}
+
+.closeIcon {
+    position: absolute;
+    top: -19px;
+    right: -7px;
+    width: 20px;
+    height: 20px;
+    background: url('../img/closeButton.gif') no-repeat;
+    background-position: right;
+    z-index: 999003;
+    cursor: pointer;
+}
+
+.popup .titleBar {
+    position: absolute;
+    top: -19px;
+    left: 0;
+    right: 0;
+    background-color: #003082;
+    color: white;
+    height: 17px;
+    padding: 2px 5px 0 5px;
+    font-weight: bold;
+}
+
+.popupPositioned {
+    position: absolute;
+    background-color: white;
+    z-index: 999002;
+    border: 1px solid #9C9ACE;
+}
+
+    .popupPositioned .titleBar {
+        position: absolute;
+        top: -19px;
+        left: -1px;
+        right: -1px;
+        background-color: #003082;
+        color: White;
+        height: 17px;
+        padding: 2px 5px 0 5px;
+        font-weight: bold;
+        border: 1px solid black;
+    }
+
+#messageDiv {
+    height: 53px;
+    left: 470px;
+    overflow: auto;
+    position: absolute;
+    top: 8px;
+}
+
+    #messageDiv > div {
+        border-radius: 5px;
+        margin-bottom: 2px;
+        padding: 3px;
+    }
+
+img.infoB {
+    cursor: pointer;
+}
+
+div.tooltip {
+    position: absolute;
+    z-index: 999;
+    padding: 3px;
+    background-color: white;
+    border: 2px solid;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.letOp {
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid red;
+    font-weight: bold;
+    background-color: #FCC;
+    border-radius: 3px;
+}
+
+img.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+/* selector.js */
+.selectionLine:hover {
+    border-color: #ddd;
+    background-color: #e0e0e0;
+}   
+
+.selectionLineActive {
+    border-color: #ddd;
+    background-color: #d3d3d3;
+}
+
+/* jquery UI dialog header */
+.ui-widget-header {
+background: #BED6F8 !important;
+color: #006 !important;
+border-radius: 0px !important;
+}
+
+
+/* placeholder styling */
+::-webkit-input-placeholder {
+	font-style: italic;
+    color: lightgray;
+}
+::-moz-placeholder {
+	font-style: italic;
+    color: lightgray;
+}
+:-ms-input-placeholder {
+    font-style: italic;
+    color: lightgray;
+}	
+
+.splitter {
+    background-color: #CCCCCC;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfilelabel {
+    padding: 1.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    margin: 2px;
+}

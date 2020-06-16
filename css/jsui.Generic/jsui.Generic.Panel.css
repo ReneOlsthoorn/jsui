@@ -1,0 +1,92 @@
+﻿.GUIPanelResizable {
+	flex: 1 1 auto;
+}
+.GUIPanelNotResizable {
+	flex: 0 0 auto;
+}
+
+.GUIpanel {
+    position: relative;
+    background-image: url('../../img/jsui.Generic/GUI/panel_top.png');
+    background-repeat: repeat-x;
+    padding-top: 20px;
+    min-height: 30px;
+    border: 1px solid #C6C3C6;
+    border-top: 0;
+    margin-bottom: 5px;
+}
+
+    .GUIpanel div.title {
+        position: absolute;
+        top: 4px;
+        left: 20px;
+        right: 18px;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .GUIpanel.GUIpanelCollapsed div.title {
+        top: 2px;
+    }
+
+    .GUIpanel div.closeable {
+        cursor: pointer;
+    }
+
+    .GUIpanel div.content {
+        position: relative;
+        margin: 3px;
+        padding: 0;
+    }
+
+    .GUIpanel div.showhidebutton {
+        position: absolute;
+        cursor: pointer;
+        background-image: url('../../img/jsui.Generic/GUI/arrowsupdown.png');
+        height: 15px;
+        width: 15px;
+        right: 5px;
+        top: 5px;
+    }
+
+        .GUIpanel div.showhidebutton:hover {
+            background-position: 0 15px;
+        }
+
+
+    .GUIpanel.collapsed {
+        padding-top: 23px;
+        min-height: 0;
+        overflow: hidden;
+		flex: 0 0 auto;
+    }
+
+        .GUIpanel.collapsed div.content {
+            display: none;
+        }
+
+        .GUIpanel.collapsed div.showhidebutton {
+            background-position: 15px 0;
+        }
+
+            .GUIpanel.collapsed div.showhidebutton:hover {
+                background-position: 15px 15px;
+            }
+
+    .GUIpanel.full {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+        .GUIpanel.full div.content {
+            position: absolute;
+            top: 23px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+        }

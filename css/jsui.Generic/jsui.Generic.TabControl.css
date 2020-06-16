@@ -1,0 +1,79 @@
+div.TabControl {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 7px;
+}
+
+    div.TabControl .TabHeaderContainer {
+        display: table-row;
+    }
+
+    div.TabControl div.TabHeader {
+        position: relative;
+        float: left;
+        height: 15px;
+        margin-left: 4px;
+        padding-left: 14px;
+        padding-right: 14px;
+        padding-top: 4px;
+        border: 1px solid #84AECE;
+        border-bottom: 0;
+        border-top-left-radius: 12px 16px;
+        border-top-right-radius: 12px 16px;
+        background: repeating-linear-gradient(to bottom, white 2%, #A5C7E7);
+        color: #000063;
+        z-index: 9;
+		-moz-user-select: none;
+		user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+    }
+
+        div.TabControl div.TabHeader.Clickable {
+            cursor: pointer;
+        }
+
+        div.TabControl div.TabHeader.Selected {
+            background: repeating-linear-gradient(to bottom, #FFC739 2%, white);
+        }
+
+        div.TabControl div.TabHeader.Disabled {
+            background: repeating-linear-gradient(to bottom, white 2%, #DDDDDD);
+            border-color: darkgray;
+            color: #BBB;
+        }
+
+        div.TabControl div.TabHeader .NoBorder {
+            position: absolute;
+            background-color: white;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+        }
+
+    div.TabControl div.TabPage {
+        display: none;
+    }
+
+        div.TabControl div.TabPage div.HeightContainer {
+            position: relative;
+        }
+
+        div.TabControl div.TabPage div.TabBody {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            border: 1px solid #84AECE;
+            padding: 4px;
+            overflow: auto;
+            background-color: white;
+        }
+
+    /* full */
+    div.TabControl.full, div.TabControl.full div.TabPage, div.TabControl.full div.TabPage div.HeightContainer {
+        height: 100%;
+    }
