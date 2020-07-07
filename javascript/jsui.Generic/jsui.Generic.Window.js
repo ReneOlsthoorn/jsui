@@ -100,16 +100,18 @@ jsui.Generic.Window = (function () {
 			let centerContainerHeight = containerHeight / 2;
 			let centerWindowHeight = windowHeight / 2;
 			
-            if (settings.alignX) {
-                if (settings.alignX.startsWith("right")) {
-                    let lastPart = settings.alignX.substr(5);
-                    if (lastPart.startsWith("+") || lastPart.startsWith("-")) {
-                        let offsetX = parseInt(lastPart, 10);
-                        div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth + offsetX - 3 + "px") });
-                    } else {
-                        div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
-                    }
-                }
+			if (settings.alignX) {
+				parseAlignX(settings.alignX);
+				/*
+				if (settings.alignX.startsWith("right")) {
+					let lastPart = settings.alignX.substr(5);
+					if (lastPart.startsWith("+") || lastPart.startsWith("-")) {
+						let offsetX = parseInt(lastPart, 10);
+						div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth + offsetX - 3 + "px") });
+					} else {
+						div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
+					}
+				}
 				//if (settings.alignX === "right") {
 				//	div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
 				//}
@@ -119,6 +121,7 @@ jsui.Generic.Window = (function () {
 				if (settings.alignX === "left") {
 					div.css({ "left": (containerSize.containerMinX + "px") });
 				}
+				*/
 			}
 			
 			if (settings.alignY) {
@@ -147,7 +150,52 @@ jsui.Generic.Window = (function () {
 				div.css({ "top": (settings.top + "px") });
 			}
 		}
-		
+
+		function parseAlignX(theAlignX) {
+			let centerContainerWidth = containerWidth / 2;
+			let centerWindowWidth = windowWidth / 2;
+			let centerContainerHeight = containerHeight / 2;
+			let centerWindowHeight = windowHeight / 2;
+
+			if (theAlignX.startsWith("right")) {
+				let lastPart = theAlignX.substr(5);
+				if (lastPart.startsWith("+") || lastPart.startsWith("-")) {
+					let offsetX = parseInt(lastPart, 10);
+					div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth + offsetX - 3 + "px") });
+				} else {
+					div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
+				}
+			}
+			//if (settings.alignX === "right") {
+			//	div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
+			//}
+			if (theAlignX === "center") {
+				div.css({ "left": (containerSize.containerMinX + centerContainerWidth - centerWindowWidth + "px") });
+			}
+			if (theAlignX === "left") {
+				div.css({ "left": (containerSize.containerMinX + "px") });
+			}
+        }
+
+		function setTitle(newTitle) {
+			title.html(newTitle);
+		}
+
+		function activateBlanket(theBlanketZIndex) {
+			if (!theBlanketZIndex) {
+				blanket = $('<div id="blanket"></div>');
+			} else {
+				blanket = $('<div id="blanket" style="z-index: ' + theBlanketZIndex + '"></div>');
+            }
+			$(document.body).append(blanket);
+		}
+
+		function deactivateBlanket() {
+			if (blanket) {
+				blanket.remove();
+				blanket = null;
+			}
+        }
 		
 		function userClose() {
 			if (settings.hasOwnProperty("allowUserClose")) {
@@ -162,10 +210,7 @@ jsui.Generic.Window = (function () {
 		}
 		
 		function close() {
-			if (blanket) {
-				blanket.remove();
-				blanket = null;
-			}			
+			deactivateBlanket();		
 			div.remove();
 			$(self).trigger("closed");	
 		}
@@ -236,14 +281,18 @@ jsui.Generic.Window = (function () {
 			}
 		}
 		
-        self.show = show;
-        self.hide = hide;
-		self.getDOMElement = getDOMElement;
-		self.getContentElement = getContentElement;
-		self.close = close;
-		self.userClose = userClose;
-		self.getBlanket = function() { return blanket; }
-		self.getMoveableWindow = self.getDOMElement;
+		this.show = show;
+		this.hide = hide;
+		this.getDOMElement = getDOMElement;
+		this.getContentElement = getContentElement;
+		this.close = close;
+		this.userClose = userClose;
+		this.getBlanket = function() { return blanket; }
+		this.getMoveableWindow = self.getDOMElement;
+		this.setTitle = setTitle;
+		this.activateBlanket = activateBlanket;
+		this.deactivateBlanket = deactivateBlanket;
+		this.parseAlignX = parseAlignX;
 		
 		init();
     }
