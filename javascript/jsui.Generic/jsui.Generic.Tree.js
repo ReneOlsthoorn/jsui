@@ -1080,27 +1080,34 @@ jsui.Generic.Tree = (function () {
 					}
 				}
 				return loopNode;
-			} else {
-				var node = new treeNode(self, undefined, data);
-				nodes.push(node);
-				if (getSortFunction()) {
-					nodes.sort(getSortFunction());
-				}
-				var indexNode = indexOfNode(node);
-				if (indexNode === 0) {
-					if (nodes.length === 1) {
-						divTree.append(node.getDOMElement());
-					} else {
-						nodes[indexNode].getDOMElement().before(node.getDOMElement());
-					}
-				} else {
-					nodes[indexNode-1].getDOMElement().after(node.getDOMElement());
-				}
-				if (!bulk) {
-					refreshNodes();
-				}
-				return node;
 			}
+
+			// there is no PathSeparator, so if the rootnode already exists then exit
+			if (data.label) {
+				if (self.findNodeOnLabel(data.label)) { 
+					return loopNode;
+				}
+			}
+
+			var node = new treeNode(self, undefined, data);
+			nodes.push(node);
+			if (getSortFunction()) {
+				nodes.sort(getSortFunction());
+			}
+			var indexNode = indexOfNode(node);
+			if (indexNode === 0) {
+				if (nodes.length === 1) {
+					divTree.append(node.getDOMElement());
+				} else {
+					nodes[indexNode].getDOMElement().before(node.getDOMElement());
+				}
+			} else {
+				nodes[indexNode-1].getDOMElement().after(node.getDOMElement());
+			}
+			if (!bulk) {
+				refreshNodes();
+			}
+			return node;
 		}
 		
 		function indexOfNode(node) {

@@ -166,14 +166,17 @@ jsui.Generic.Window = (function () {
 					div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
 				}
 			}
-			//if (settings.alignX === "right") {
-			//	div.css({ "left": (containerSize.containerMinX + containerWidth - windowWidth - 3 + "px") });
-			//}
 			if (theAlignX === "center") {
 				div.css({ "left": (containerSize.containerMinX + centerContainerWidth - centerWindowWidth + "px") });
 			}
-			if (theAlignX === "left") {
-				div.css({ "left": (containerSize.containerMinX + "px") });
+			if (theAlignX.startsWith("left")) {
+				let lastPart = theAlignX.substr(4);
+				if (lastPart.startsWith("+") || lastPart.startsWith("-")) {
+					let offsetX = parseInt(lastPart, 10);
+					div.css({ "left": (containerSize.containerMinX + offsetX + "px") });
+				} else {
+					div.css({ "left": (containerSize.containerMinX + "px") });
+				}
 			}
         }
 
